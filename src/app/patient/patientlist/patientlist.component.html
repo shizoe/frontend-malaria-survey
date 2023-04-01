@@ -1,0 +1,42 @@
+<div class="container-fluid page">
+  <div class="d-flex page__box p-3 mt-2">Patient Register</div>
+
+    <div class="page__content-data position-absolute text-center">
+      Home Content Goes Here
+    </div>
+
+</div>
+
+
+
+
+<div class="card">
+  <div class="card-body">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Opd Number</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Date of Birth</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Village</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of patientList; index as ind" class="mat-row" (click)="viewDetails(item.id)">
+        <th scope="row">{{ind + 1}}</th>
+        <td>{{item.opdnumber}}</td>
+        <td>{{item.firstname.toUpperCase()}}</td>
+        <td>{{item.lastname.toUpperCase()}}</td>
+        <td>{{item.dateOfBirth}}</td>
+        <td>{{item.sex.toUpperCase()}}</td>
+        <td>{{item.village.toUpperCase()}}</td>
+
+
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

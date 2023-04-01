@@ -1,0 +1,36 @@
+<mat-nav-list>
+  <div class="logo py-4">
+    <img src="./assets/logo.svg" alt="Company Logo" />
+  </div>
+  <mat-divider></mat-divider>
+  <div *ngIf="currentUser?.id">
+    <h2 matSubheader class="mt-2">Patient Transactions</h2>
+
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/registration">
+      <mat-icon>person_add</mat-icon> PATIENT REGISTRATION
+    </a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/labresults">
+      <mat-icon>bug_report</mat-icon> LAB RESULTS
+    </a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/followuplist">
+      <mat-icon>list</mat-icon>POSITIVE FOLLOWUP LIST
+    </a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/patientlist">
+      <mat-icon>line_style</mat-icon>PATIENT REGISTER
+    </a>
+  </div>
+  <div *ngIf="isAdmin()">
+    <h2 matSubheader class="mt-2">Admin Area</h2>
+
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/home">
+      <mat-icon>home</mat-icon> USER REGISTRATION
+    </a>
+
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard">
+      <mat-icon>dashboard</mat-icon> EDIT USERS
+    </a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard">
+      <mat-icon>dashboard</mat-icon> EDIT PATIENTS
+    </a>
+  </div>
+</mat-nav-list>

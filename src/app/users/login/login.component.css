@@ -1,0 +1,24 @@
+:host{
+  display: block;
+  background-image: url('public/itn.png');
+  border: 1px solid darkcyan;
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.custom-card{
+  width: 400px;
+  max-width: 100%;
+  background-color: #eee;
+}
+.user-icon{
+  font-size: 100px;
+  color: darkolivegreen;
+
+}

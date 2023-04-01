@@ -1,0 +1,142 @@
+<div class="container-fluid page">
+
+  <div class="d-flex page__box p-3 mt-2">
+    <span>Patient Details</span>
+    <span class="fill-remaining-space"></span>
+    <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabindex="-1"><mat-icon>clear</mat-icon></button>
+  </div>
+
+  <div class="container mt-5">
+    <div class="card ms-auto me-auto p-3 shadow-lg custom-card">
+      <div class="ms-auto me-auto">
+        <mat-icon class="ms-auto me-auto user-icon">face</mat-icon>
+      </div>
+
+      <form #f="ngForm">
+        <div class="form-group">
+          <label for="opdnumber">OPD Number</label>
+          <input
+            value="{{patient.opdnumber}}"
+            type="text"
+            id="opdnumber"
+            name="opdnumber"
+            [(ngModel)]="patient.opdnumber"
+            [readonly]="true"
+            #opdnumber = "ngModel"
+            class="form-control"
+          />
+        </div>
+        <div class="form-group">
+          <label for="firstname">First Name</label>
+          <input
+            value="{{patient.firstname.toLocaleUpperCase()}}"
+            type="text"
+            id="firstname"
+            name="firstname"
+            [(ngModel)]="patient.firstname"
+            [readonly]="true"
+            #firstname = "ngModel"
+            class="form-control"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="lastname">Last Name</label>
+          <input
+            value="{{patient.lastname.toUpperCase()}}"
+            type="text"
+            id="lastname"
+            name="lastname"
+            [(ngModel)]="patient.lastname"
+            [readonly]="true"
+            #lastname="ngModel"
+            class="form-control"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="sex"> Gender</label>
+          <select name="gender"
+                  id="sex"
+                  name="sex"
+                  [(ngModel)]="patient.sex"
+                  #sex="ngModel"
+                  class="form-control">
+            <option value="{{patient.sex}}" selected>{{patient.sex.toUpperCase()}}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="dateOfBirth">Date of Birth</label>
+          <input
+            value="{{patient.dateOfBirth}}"
+            type="date"
+            id="dateOfBirth"
+            name="dateOfBirth"
+            [(ngModel)]="patient.dateOfBirth"
+            [readonly]="true"
+            #dateOfBirth="ngModel"
+            class="form-control"
+          />
+        </div>
+
+        <div class="form-group" *ngIf="patient.sex === 'female'">
+          <label for="pregnant">Pregnant</label>
+          <input
+            value="{{patient.pregnant.toUpperCase()}}"
+            type="text"
+            id="pregnant"
+            name="pregnant"
+            [(ngModel)]="patient.pregnant"
+            [readonly]="true"
+            #pregnant="ngModel"
+            class="form-control"
+          />
+        </div>
+        <div class="form-group" *ngIf="patient.housenumber !== ''">
+          <label for="housenumber">House Number</label>
+          <input
+            type="text"
+            value="{{patient.housenumber.toUpperCase()}}"
+            id="housenumber"
+            name="housenumber"
+            [(ngModel)]="patient.housenumber"
+            [readonly]="true"
+            #housenumber="ngModel"
+            class="form-control"
+          />
+        </div>
+        <div class="form-group">
+          <label for="village">Village</label>
+          <input
+            value="{{patient.village}}"
+            type="text"
+            placeholder="{{patient.village.toUpperCase()}}"
+            id="village"
+            name="village"
+            [(ngModel)]="patient.village"
+            [readonly]="true"
+            #village="ngModel"
+            class="form-control"
+          />
+        </div>
+        <div class="form-group" *ngIf="patient.phonenumber !== ''">
+          <label for="phonenumber">Phone Number</label>
+          <input
+            value="{{patient.phonenumber}}"
+            type="text"
+            id="phonenumber"
+            name="phonenumber"
+            [(ngModel)]="patient.phonenumber"
+            [readonly]="true"
+            #phonenumber="ngModel"
+            class="form-control"
+          />
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+</div>
+
